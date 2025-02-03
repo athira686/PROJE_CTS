@@ -1,0 +1,42 @@
+DIGITAL THERMOMETER USING 8051 MICROCONTROLLER
+
+## Project Overview
+This project is a digital thermometer that measures temperature and displays the result on a digital display using the 8051 microcontroller. The system interfaces with a temperature sensor (such as LM35) and converts the analog signal to a digital value using an ADC. The temperature value is then shown on a 7-segment display or an LCD.
+
+## Components Used:
+- **8051 Microcontroller**: Acts as the central controller of the system.
+- **LM35 Temperature Sensor**: Measures the temperature and converts it to an analog voltage.
+- **ADC (Analog to Digital Converter)**: Converts the analog voltage from the LM35 to a digital value for processing by the microcontroller (if necessary, depending on your setup).
+- **7-Segment Display or LCD**: Displays the temperature value in digital form.
+- **Resistors, Capacitors**: For signal conditioning and stability of the system.
+- **Power Supply**: Typically 5V to power the 8051 and other components.
+- **Breadboard or PCB**: For circuit assembly.
+
+## Features:
+- Real-time temperature monitoring.
+- Displays temperature on a 7-segment display or LCD.
+- Accurate temperature readings with the LM35 sensor.
+- Can be used for room temperature measurement or any other application requiring temperature data
+
+## Pin Configuration:
+- **8051 Microcontroller Pins**:
+  - P0-P3: Used for connecting the data lines of the 7-segment display (if used).
+  - P4-P7: For communication with the ADC or sensor.
+  - Other control pins as required for interfacing.
+
+- **LM35 Pinout**:
+  - Pin 1: VCC (connected to +5V)
+  - Pin 2: Output (Analog signal corresponding to temperature)
+  - Pin 3: Ground
+
+## How It Works:
+1. **Temperature Sensing**: The LM35 temperature sensor outputs an analog voltage corresponding to the temperature. For every 1°C increase in temperature, the LM35 outputs 10 mV.
+2. **Analog-to-Digital Conversion**: If the output from the LM35 is analog, an ADC will convert the signal into a digital format for the microcontroller to process. (This step is optional if you’re directly interfacing with the sensor through a microcontroller with ADC built-in).
+3. **Processing**: The 8051 microcontroller processes the digital value from the ADC, calculates the temperature, and prepares the data for display.
+4. **Display**: The processed temperature data is displayed on a 7-segment display or an LCD.
+
+## Software:
+The software for this project is written in Assembly/C for the 8051 microcontroller. It performs the following tasks:
+- Reads the temperature data from the sensor.
+- Converts the analog value to a digital temperature value.
+- Displays the temperature on the connected display.
